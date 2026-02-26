@@ -5,7 +5,8 @@ description: 'Generate and maintain high-quality GitHub Copilot instruction file
 
 # Copilot Instructions Generator
 
-Generate professional `.github/copilot-instructions.md` files following GitHub's official best practices.
+Generate professional `.github/copilot-instructions.md` files following GitHub's official best practices. If the user provides a path to the project, use that path and append `.github/copilot-instructions.md` to it. For example `<path to project>/.github/copilot-instructions.md`. If the project already contain an existing `copilot-instructions.md`, analyze and update that one instead of creating a new one. **Never** completely replace the existing `copilot-instructions.md` file, use the existing domain knowledge and try to fit it as best as possible to the new templates.
+If the user didn't provide a path, use current location for generating the `copilot-instructions.md`.
 
 ## When To Use This Skill
 
@@ -15,6 +16,8 @@ Trigger phrases:
 - "set up copilot config"
 - "update copilot instructions"
 - "make a copilot instructions file"
+- "create copilot instructions for <project path>"
+- "generate copilot-instructions.md for <project path>"
 
 ## Workflow
 
@@ -164,7 +167,7 @@ Check against `references/validation-checklist.md`:
 
 ## Output Location
 
-Always create at: `.github/copilot-instructions.md`
+Always create at `.github/copilot-instructions.md` if user didn't specify path, otherwise create at provided location.
 
 ## References
 

@@ -64,17 +64,18 @@ Follow the skill's workflow exactly:
 2. **Determine project type** (greenfield vs existing)
 3. **Analyze codebase** if existing
 4. **Load relevant tech-stack example**
-5. **Research current best practices** via web search
-6. **Generate instructions** using template
-7. **Interview user** for refinements
-8. **Validate** using checklist
+5. **Always consider additional user input. If you have questions, or something is unclear, let the user know.**
+6. **Research current best practices** via web search
+7. **Generate instructions** using template
+8. **Interview user** for refinements
+9. **Validate** using checklist
 
 ## Output
 
-Create file at: `.github/copilot-instructions.md`
+If the user provided a path to relevant project, use that path to create instructions file, in form of `<path to project>/.github/copilot-instructions.md`. Otherwise, create file at the current path: `.github/copilot-instructions.md`
 
 ## Boundaries
 
-- Only create/modify `.github/copilot-instructions.md`
+- Only create/modify the relevant `copilot-instructions.md` file
 - Do not modify source code
 - Always follow skill guidelines
